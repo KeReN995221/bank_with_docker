@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "425254bf-5c45-4216-bf81-03109c61916d",
+		"name": "EUREKA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34398060"
+	},
+	"item": [
+		{
+			"name": "Cartoes",
+			"item": [
+				{
+					"name": "Get Cartoes Renda Ate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:63570/cartoes?renda=5000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "63570",
+							"path": [
+								"cartoes"
+							],
+							"query": [
+								{
+									"key": "renda",
+									"value": "5000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cartões Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"bradesco  visa\",\r\n    \"bandeira\":\"VISA\",\r\n    \"renda\":3000,\r\n    \"limite\":3500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:/cartoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "",
+							"path": [
+								"cartoes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Cliente Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\":\"12399802947\",\r\n    \"nome\":\"Wesley\",\r\n    \"idade\":19\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://pretinho.mshome.net:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"pretinho",
+								"mshome",
+								"net"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cliente By Cpf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:52134/clientes?cpf=12399802947",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "52134",
+							"path": [
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "cpf",
+									"value": "12399802947"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pretinho.mshome.net:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"pretinho",
+								"mshome",
+								"net"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Avaliador cartoes",
+			"item": [
+				{
+					"name": "Status",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Situação Cliente",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Avaliador Cliente",
+			"item": [
+				{
+					"name": "Avaliação Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://pretinho.mshome.net:8080/avaliacoes-credito",
+							"protocol": "http",
+							"host": [
+								"pretinho",
+								"mshome",
+								"net"
+							],
+							"port": "8080",
+							"path": [
+								"avaliacoes-credito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitacao Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://pretinho.mshome.net:8080/avaliacoes-credito",
+							"protocol": "http",
+							"host": [
+								"pretinho",
+								"mshome",
+								"net"
+							],
+							"port": "8080",
+							"path": [
+								"avaliacoes-credito"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Keycloak Token",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "O7XCLSOhb0EDn4oE3tU3v3N4CVn7Q8ut",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "mscredito",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8081/realms/mscourserealm/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
